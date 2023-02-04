@@ -19,4 +19,14 @@
     <servlet-name>jugadores</servlet-name>
     <url-pattern>/jugadores</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListaJugadores</display-name>
+    <servlet-name>ListaJugadores</servlet-name>
+    <servlet-class>com.gerenciador.servlet.ListaJugadores</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListaJugadores</servlet-name>
+    <url-pattern>/ListaJugadores</url-pattern>
+  </servlet-mapping>
 </web-app>
