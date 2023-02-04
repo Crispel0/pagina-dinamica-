@@ -19,7 +19,7 @@ public class jugadores extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<html><body><h1>  Hola ome " + nombreJugador + "</h1></body></html>");
 		
-		Jugador jugadores = new  Jugador();
+		Jugador jugadores = new Jugador();
 		
 		jugadores.setNombre(nombreJugador);
 		
