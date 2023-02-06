@@ -1,5 +1,6 @@
 package com.gerenciador.servlet;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,16 +22,10 @@ public class ListaJugadores extends HttpServlet {
 		
 		List<Jugador> listaJugadores = basedatos.getListaJugadores();
 		
-		PrintWriter out = response.getWriter();
-		
-		out.println("<html><body>");
-		out.println("<uh>");
-		for(Jugador jugadores : listaJugadores){
-			out.println(" <li> " + jugadores.getNombre() + " </li> ");
-		};
-		out.println("</ul>");
-		out.println("</body></html>");
-		
+
+		request.setAttribute("ListaJugadores", listaJugadores);
+		RequestDispatcher rd = request.getRequestDispatcher("/listaJugadores.jsp");
+		rd.forward(request, response);
 		
 	}
 
