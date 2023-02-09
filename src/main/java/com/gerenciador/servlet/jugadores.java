@@ -1,5 +1,6 @@
 package com.gerenciador.servlet;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,7 +30,7 @@ public class jugadores extends HttpServlet {
 
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/nuevoListaJugadores.jsp");
-		request.setAttribute("jugadores", jugadores);
+		request.setAttribute("jugadores", jugadores.getNombre());
 		rd.forward(request, response);
 
 

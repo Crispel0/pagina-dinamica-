@@ -6,7 +6,7 @@ public class Jugador {
 
 	private Integer id;
 	private String nombre;
-	private Date fechaAdmision;
+	private Date fechaAdmision = new Date(); //Initialize a fechaAdmision each time that we're create a player//s
 	
 	public Integer getId() {
 		return id;
