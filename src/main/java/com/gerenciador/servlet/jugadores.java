@@ -23,9 +23,18 @@ public class jugadores extends HttpServlet {
 		
 		jugadores.setNombre(nombreJugador);
 		
-		
-		
-	}
 
+		DB basedatos = new DB();
+		basedatos.agregarjugadores(jugadores);
+
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/nuevoListaJugadores.jsp");
+		request.setAttribute("jugadores", jugadores);
+		rd.forward(request, response);
+
+
+
+
+	}
 
 }

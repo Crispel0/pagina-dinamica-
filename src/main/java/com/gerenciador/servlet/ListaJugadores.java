@@ -20,12 +20,13 @@ public class ListaJugadores extends HttpServlet {
 		DB basedatos = new DB();
 		
 
-	
-		List<Jugador> listaJugadores = basedatos.getListaJugadores();	
+		List<Jugador> listaJugadores = basedatos.getListaJugadores();
 		
-			request.setAttribute("listaJugadores", listaJugadores);
-			RequestDispatcher rd = request.getRequestDispatcher("/listaJugadores.jsp");
-			rd.forward(request, response);
+
+		request.setAttribute("ListaJugadores", listaJugadores);
+		RequestDispatcher rd = request.getRequestDispatcher("/listaJugadores.jsp");
+		rd.forward(request, response);
+		
 
 	}
 }

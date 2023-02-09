@@ -12,11 +12,10 @@
 <body>
 
 <ul>
-	
+	<!-- obtiene los valores de un jugador por su nombre y fecha de admision formateadas -->
 	<c:forEach items="listaJugadores" var="jugador">
-		<li> ${ jugador.nombre }</li>
-	</c:forEach>
-	
+		<li> ${ jugador.nombre } ${jugador.fechaadmision}</li>
+	</c:forEach1>
 </ul>
 </body>
 </html>
