@@ -1,26 +1,22 @@
-<%@page import="java.util.List , com.gerenciador.servlet.Jugador"s%>
+<%@page import="java.util.List , com.gerenciador.servlet.Jugador"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>listaJugadores</title>
 </head>
 <body>
 
-	<ul>
-	<%
-	List<Jugador> listajugadores = (List<Jugador>) request.getAttribute("ListaJugadores");
-		for(Jugador jugador : listajugadores){
-	%>
+<ul>
 	
-	<li> <%= (jugador.getNombre() %></li>
-
-	<%
-		} 
-	%>
-	</ul>
+	<c:forEach items="listaJugadores" var="jugador">
+		<li> ${ jugador.nombre }</li>
+	</c:forEach>
+	
+</ul>
 </body>
 </html>
