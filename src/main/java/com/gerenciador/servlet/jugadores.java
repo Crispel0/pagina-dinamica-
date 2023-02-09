@@ -26,17 +26,11 @@ public class jugadores extends HttpServlet {
 		
 		DB basedatos = new DB();
 		basedatos.agregarjugadores(jugadores);
+
 		
-		//send to JSP
-		//receive all the information about of my request and comunicate between the field java jugadores and jpss
-		RequestDispatcher rd =  request.getRequestDispatcher("/nuevoListaJugadores.jsp");
-		
-		/*send to all acquisition of a request and a response*/
-		//for middle of this setAttribute I can access to the parameter of of my method//
-		request.setAttribute("nombreJugador", jugadores.getNombre());
+		RequestDispatcher rd = request.getRequestDispatcher("/nuevoListaJugadores.jsp");
+		request.setAttribute("jugadores", jugadores);
 		rd.forward(request, response);
-			
-	}
 
 
 }

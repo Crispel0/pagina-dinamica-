@@ -10,17 +10,12 @@
 </head>
 <body>
 
-	<ul>
-	<%
-	List<Jugador> listajugadores = (List<Jugador>) request.getAttribute("ListaJugadores");
-		for(Jugador jugador : listajugadores){
-	%>
+<ul>
+	<!-- obtiene los valores de un jugador por su nombre y fecha de admision formateadas -->
+	<c:forEach items="listaJugadores" var="jugador">
+		<li> ${ jugador.nombre } ${jugador.fechaadmision}</li>
+	</c:forEach>
 	
-	<li> <%= (jugador.getNombre() %></li>
-
-	<%
-		} 
-	%>
-	</ul>
+</ul>
 </body>
 </html>

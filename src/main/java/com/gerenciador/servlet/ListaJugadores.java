@@ -28,7 +28,6 @@ public class ListaJugadores extends HttpServlet {
 		rd.forward(request, response);
 		
 	}
-
 	
 
 }
