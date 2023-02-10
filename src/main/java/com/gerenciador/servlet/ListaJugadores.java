@@ -15,7 +15,7 @@ public class ListaJugadores extends HttpServlet {
 	/* make a for for each Jugador in the listaJugadores and print them
 	 * hace un for por cada jugador en la listaJugadores y imprime ellas
 	 * */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		DB basedatos = new DB();
 		

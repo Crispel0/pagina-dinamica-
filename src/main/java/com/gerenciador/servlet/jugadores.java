@@ -25,13 +25,16 @@ public class jugadores extends HttpServlet {
 		
 		Date parametroFecha = null;
 		
-		try {
-			//hace un parse o conversion de fechas con un pattern
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			 parametroFecha =  sdf.parse(nombreJugador);
-		} catch (ParseException exceptionParse) { //en cualquier otro caso que haya un error al momento de parsear la fecha lanzar un ServletException//
-			throw new ServletException(exceptionParse);
-		}
+		
+			
+			 try {
+				//hace un parse o conversion de fechas con un pattern
+				SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+				parametroFecha =  sdf.parse(paramFechaAdmision);
+			} catch (ParseException ExceptionParse) { //en caso de un problema al parsear la fecha es necesario crear un try catch re throw 
+				throw new ServletException(ExceptionParse);
+			}
+		
 		
 		
 		PrintWriter out = response.getWriter();
@@ -46,7 +49,7 @@ public class jugadores extends HttpServlet {
 		basedatos.agregarjugadores(jugadores);
 
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/nuevoListaJugadores.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/ListaJugadores");
 		request.setAttribute("jugadores", jugadores.getNombre());
 		rd.forward(request, response);
 

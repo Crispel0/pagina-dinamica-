@@ -8,7 +8,7 @@
 <html>
 <body>
 
-<c:if test="${not empty nombreJugador}">
+<c:if test="${not empty nombreJugador }">
 	<h1> Hola ome ${ nombreJugador }</h1>
 </c:if>
 <c:if test="${empty nombreJugador }">
