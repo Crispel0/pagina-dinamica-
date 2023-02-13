@@ -24,8 +24,6 @@ public class jugadores extends HttpServlet {
 		String paramFechaAdmision = request.getParameter("fecha");
 		
 		Date parametroFecha = null;
-		
-		
 			
 			 try {
 				//hace un parse o conversion de fechas con un pattern
