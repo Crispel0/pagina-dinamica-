@@ -2,6 +2,7 @@ package com.gerenciador.servlet;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,10 +14,14 @@ import java.util.Date;
 
 /**
  * Servlet implementation class jugadores
+ * 
  */
+
+@WebServlet("/jugadores")
 public class jugadores extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+     
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 
 		//obtiene los valores del jsp listaJugadoresform.jsp por medio de su valor value//
@@ -47,7 +52,7 @@ public class jugadores extends HttpServlet {
 		basedatos.agregarjugadores(jugadores);
 
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/ListaJugadores");
+		RequestDispatcher rd = request.getRequestDispatcher("ListaJugadores");
 		request.setAttribute("jugadores", jugadores.getNombre());
 		rd.forward(request, response);
 

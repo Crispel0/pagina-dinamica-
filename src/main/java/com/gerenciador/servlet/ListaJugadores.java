@@ -2,13 +2,14 @@ package com.gerenciador.servlet;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-
+@WebServlet("/ListaJugadores")
 public class ListaJugadores extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -24,7 +25,7 @@ public class ListaJugadores extends HttpServlet {
 		
 
 		request.setAttribute("jugadores", listaJugadores);
-		RequestDispatcher rd = request.getRequestDispatcher("/listaJugadores.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("listaJugadores.jsp");
 		rd.forward(request, response);
 		
 

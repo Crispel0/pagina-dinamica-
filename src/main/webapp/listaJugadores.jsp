@@ -21,11 +21,11 @@
 		
 		<!-- obtiene los valores de un jugador por su nombre y fecha de admision formateadas -->
 		<c:forEach items=" ${jugadores} " var="jugador">
-			<li>${ jugador.nombre }-- <fmt:formatDate
-					value="${ jugador.fechaAdmision}" pattern="dd/MM/yyyy" />
+			<li>${ jugador.nombre }
+			<fmt:formatDate value=" ${ jugador.fechaAdmision}" pattern="dd/MM/yyyy" />
 			</li>
-			
-			<a href="gerenciador/eliminarJugadores">Eliminar</a>
+			<!-- Es asignado por la ruta  del URL la especificacion del id -->
+			<a href="gerenciador/eliminarJugadores?id=${jugador.id}">Eliminar</a>
 		</c:forEach>
 	</ul>
 </body>
