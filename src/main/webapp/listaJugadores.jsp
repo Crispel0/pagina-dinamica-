@@ -26,6 +26,7 @@
 			</li>
 			<!-- Es asignado por la ruta  del URL la especificacion del id -->
 			<a href="gerenciador/eliminarJugadores?id=${jugador.id}">Eliminar</a>
+			<a href="gerenciador/modificarJugadores?id=${jugador.id}">modificar</a>
 		</c:forEach>
 	</ul>
 </body>

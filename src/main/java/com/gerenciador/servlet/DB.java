@@ -55,5 +55,23 @@ public class DB {
 		}
 	}
 
+	/**
+	 * recorre todos los jugadores en el caso de encontrar uno igual a el id por parametro automaticamente 
+	 * me retorna ese jugador del id de lo contrario no me retorna nada (si se desea puede retornarse una exception para
+	 * mi no es necesario)
+	 * @param id
+	 * @return
+	 */
+	public Jugador buscarJugadorPorId(Integer id) {
+		for (Jugador jugador : listaJugadores) {
+			if(jugador.getId() == id) {
+				return jugador;
+			}
+		}
+		return null;
+		
+		
+	}
+
 	
 }
