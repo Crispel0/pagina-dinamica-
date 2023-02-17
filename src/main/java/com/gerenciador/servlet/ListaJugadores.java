@@ -18,11 +18,12 @@ public class ListaJugadores extends HttpServlet {
 	 * */
 	protected void service (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		DB basedatos = new DB();
+		DB basedatos = DB.getInstance();
 		
 
 		List<Jugador> listaJugadores = basedatos.getListaJugadores();
 		
+        System.out.println("elements in memory are " + listaJugadores.size());
 
 		request.setAttribute("jugadores", listaJugadores);
 		RequestDispatcher rd = request.getRequestDispatcher("listaJugadores.jsp");

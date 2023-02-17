@@ -20,7 +20,7 @@ public class MostrarJugadores extends HttpServlet {
 			String paramId = request.getParameter("id");
 			Integer id = Integer.valueOf(paramId);
 			
-			DB basedatos = new DB();
+			DB basedatos = DB.getInstance();
 			
 			Jugador jugador = basedatos.buscarJugadorPorId(id);
 		}
