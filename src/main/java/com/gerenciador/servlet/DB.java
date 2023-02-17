@@ -3,22 +3,23 @@ package com.gerenciador.servlet;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class DB {
 
-	private static List<Jugador> listaJugadores = new ArrayList<>();
-	private static Integer llavesecuencial = 1;
+	private final List<Jugador> listaJugadores = new ArrayList<>();
+	private final AtomicInteger llavesecuencial = new AtomicInteger(1);
+	private static DB instance = null;
 	
-	static {
-		/*initialized the base of dates with information like a constructor
-		 * Y despues es asignado una llavepara el momento de crear un objeto Jugador 
-		 */
+	/*can't instanciate it*/
+	private DB () {
+		
 		
 		Jugador jugador = new Jugador();
-		jugador.setId(DB.llavesecuencial);
+		jugador.setId(llavesecuencial.getAndIncrement());
 		jugador.setNombre("Ronaldinho");
 		Jugador jugador2 = new Jugador();
-		jugador2.setId(DB.llavesecuencial);
+		jugador2.setId(llavesecuencial.getAndIncrement());
 		jugador2.setNombre("Di Maria");
 		
 		listaJugadores.add(jugador);
@@ -28,13 +29,20 @@ public class DB {
 	
 	/**cada vez que se crea un Jugador se añada a la lista y se asinga a la llave como comntador ID*/
 	public void agregarjugadores(Jugador jugadores) {
-		 DB.listaJugadores.add(jugadores);
-		 jugadores.setId(DB.llavesecuencial);
+		 listaJugadores.add(jugadores);
+		 jugadores.setId(llavesecuencial.getAndIncrement());
 		 
 	}
 	
+	  public static DB getInstance() {
+	        if (instance == null) {
+	            instance = new DB();
+	        }
+	        return instance;
+	    }
+	
 	public List<Jugador> getListaJugadores(){
-		return DB.listaJugadores;
+		return listaJugadores;
 	}
 
 	/**
