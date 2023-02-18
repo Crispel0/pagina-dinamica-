@@ -18,7 +18,7 @@ public class ListaJugadores extends HttpServlet {
 	 * */
 	protected void service (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		DB basedatos = DB.getInstance();
+		DB basedatos = DB.getInstancia();
 		
 
 		List<Jugador> listaJugadores = basedatos.getListaJugadores();

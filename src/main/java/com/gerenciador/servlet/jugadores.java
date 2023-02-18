@@ -46,7 +46,7 @@ public class jugadores extends HttpServlet {
 		jugadores.setNombre(nombreJugador);
 		jugadores.setfechaAdmision(parametroFecha);
 		
-		DB basedatos = DB.getInstance();
+		DB basedatos = DB.getInstancia();
 		basedatos.agregarjugadores(jugadores);
 		
 		

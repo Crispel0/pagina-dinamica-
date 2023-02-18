@@ -12,13 +12,13 @@
 
 <form action= "${modificarJugadores}" method="post">
 
-Jugador <input type="text" name="nombre" placeholder="Ingrese El Nombre De Un Jugador" value="${Jugador.nombre}" /> 
+Jugador <input type="text" name="nombre" placeholder="Ingrese El Nombre De Un Jugador" value="${jugador.nombre}" /> 
 FechaAdmision 
 
 <input type="text" name="fecha" placeholder="Ingrese la fecha de admision del jugador" value="<fmt:formatDate 
-value="${ jugador.fechaAdmision}" pattern="dd/MM/yyyy" />"/> 
+value="${jugador.fechaAdmision}" pattern="dd/MM/yyyy" />"/> 
 
-<input type="hidden" name="id" value="${Jugador.id}" /> 
+<input type="hidden" name="id" value="${jugador.id}" /> 
 
 <input type="submit"/>
 

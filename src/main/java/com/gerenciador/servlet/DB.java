@@ -34,7 +34,7 @@ public class DB {
 		 
 	}
 	
-	  public static DB getInstance() {
+	  public static DB getInstancia() {
 	        if (instance == null) {
 	            instance = new DB();
 	        }

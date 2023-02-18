@@ -35,9 +35,8 @@ public class ModificarJugadores extends HttpServlet {
 		 * puedo utilizar parseInt pero lo convertira en primitivo en nuestro caso es un objeto 
 		 * */
 		
-		Integer id = Integer.valueOf(paramId);
-		
-		
+			Integer id = Integer.valueOf(paramId);
+	
 		Date parametroFecha = null;
 			
 			 try {
@@ -47,7 +46,7 @@ public class ModificarJugadores extends HttpServlet {
 				throw new ServletException(ExceptionParse);
 			}
 			 
-		DB basedatos = DB.getInstance();
+		DB basedatos = DB.getInstancia();
 		
 		Jugador jugador = basedatos.buscarJugadorPorId(id);
 		jugador.setNombre(nombreJugador);

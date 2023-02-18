@@ -16,7 +16,7 @@ public class EliminarJugadores extends HttpServlet {
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
 		
-		DB db = DB.getInstance();
+		DB db = DB.getInstancia();
 		db.eliminarJugadores(id);
 		
 		response.sendRedirect("ListaJugadores");
