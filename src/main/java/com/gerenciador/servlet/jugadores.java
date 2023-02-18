@@ -1,6 +1,5 @@
 package com.gerenciador.servlet;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,7 +15,6 @@ import java.util.Date;
  * Servlet implementation class jugadores
  * 
  */
-
 @WebServlet("/jugadores")
 public class jugadores extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -50,11 +48,17 @@ public class jugadores extends HttpServlet {
 		
 		DB basedatos = DB.getInstance();
 		basedatos.agregarjugadores(jugadores);
+		
+		
+		request.setAttribute("jugadores", jugadores.getNombre());
+		response.sendRedirect("ListaJugadores");
 
 		
-		RequestDispatcher rd = request.getRequestDispatcher("ListaJugadores");
+		/*RequestDispatcher rd = request.getRequestDispatcher("ListaJugadores");
 		request.setAttribute("jugadores", jugadores.getNombre());
 		rd.forward(request, response);
+		
+		*/
 
 
 

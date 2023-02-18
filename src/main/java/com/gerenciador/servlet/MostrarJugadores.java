@@ -2,6 +2,7 @@ package com.gerenciador.servlet;
 
 import java.io.IOException;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,10 +19,20 @@ public class MostrarJugadores extends HttpServlet {
 	@Override
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			String paramId = request.getParameter("id");
+			/*Convierte el valor de String a Integer uso valueof en vez de parseInt porque 
+			 * parseInt me lo convierte a primitivo no a objeto
+			 */
 			Integer id = Integer.valueOf(paramId);
+			
 			
 			DB basedatos = DB.getInstance();
 			
 			Jugador jugador = basedatos.buscarJugadorPorId(id);
+			
+			request.setAttribute("jugador", jugador);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/ModificarJugadoresForm.jsp");
+			rd.forward(request, response);
+			
 		}
 }

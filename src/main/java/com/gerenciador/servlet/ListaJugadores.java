@@ -23,10 +23,9 @@ public class ListaJugadores extends HttpServlet {
 
 		List<Jugador> listaJugadores = basedatos.getListaJugadores();
 		
-        System.out.println("elements in memory are " + listaJugadores.size());
 
 		request.setAttribute("jugadores", listaJugadores);
-		RequestDispatcher rd = request.getRequestDispatcher("listaJugadores.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/listaJugadores.jsp");
 		rd.forward(request, response);
 		
 

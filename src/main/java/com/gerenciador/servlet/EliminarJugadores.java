@@ -19,7 +19,7 @@ public class EliminarJugadores extends HttpServlet {
 		DB db = DB.getInstance();
 		db.eliminarJugadores(id);
 		
-		response.sendRedirect("listaJudadores");
+		response.sendRedirect("ListaJugadores");
 		
 	}
 
