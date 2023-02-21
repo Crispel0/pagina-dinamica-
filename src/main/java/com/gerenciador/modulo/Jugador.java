@@ -1,4 +1,4 @@
-package com.gerenciador.servlet;
+package com.gerenciador.modulo;
 
 import java.util.Date;
 

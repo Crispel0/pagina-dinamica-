@@ -11,8 +11,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.gerenciador.servlet.DB;
-import com.gerenciador.servlet.Jugador;
+import com.gerenciador.modulo.DB;
+import com.gerenciador.modulo.Jugador;
 
 /**
  * Servlet implementation class ModificarJugadores

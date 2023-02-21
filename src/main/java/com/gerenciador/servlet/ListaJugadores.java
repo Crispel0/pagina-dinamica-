@@ -9,6 +9,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import com.gerenciador.modulo.DB;
+import com.gerenciador.modulo.Jugador;
+
 @WebServlet("/ListaJugadores")
 public class ListaJugadores extends HttpServlet {
 	private static final long serialVersionUID = 1L;

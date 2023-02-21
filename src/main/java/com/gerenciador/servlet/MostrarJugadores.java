@@ -2,6 +2,9 @@ package com.gerenciador.servlet;
 
 import java.io.IOException;
 
+import com.gerenciador.modulo.DB;
+import com.gerenciador.modulo.Jugador;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
