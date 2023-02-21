@@ -7,6 +7,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.gerenciador.accion.EliminarJugadores;
+import com.gerenciador.accion.ListaJugadores;
+import com.gerenciador.accion.ModificarJugadores;
+
 /**
  * Servlet implementation class UnicaEntrada
  */
@@ -20,11 +24,18 @@ public class UnicaEntrada extends HttpServlet {
 		String accion = request.getParameter("accion");
 
 		if (accion.equals("listaJugadores")) {
-			System.out.println("listandoJugadores");
+
+		ListaJugadores ListarJugadores = new ListaJugadores();
+		
+		ListarJugadores.listar(request, response);
+		
 		} else if (accion.equals("eliminarJugadores")) {
-			System.out.println("elminandoJugadores");
+
+			EliminarJugadores.eliminar(request, response);
+			
 		} else if (accion.equals("modificarJugadores")) {
-			System.out.println("modificandoJugadores");
+			ModificarJugadores modificarJugadores = new ModificarJugadores();
+			modificarJugadores.modificar(request, response);
 		}
 
 	}
