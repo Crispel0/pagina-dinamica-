@@ -10,6 +10,8 @@ import java.io.IOException;
 import com.gerenciador.accion.EliminarJugadores;
 import com.gerenciador.accion.ListaJugadores;
 import com.gerenciador.accion.ModificarJugadores;
+import com.gerenciador.accion.MostrarJugadores;
+import com.gerenciador.accion.NuevoJugador;
 
 /**
  * Servlet implementation class UnicaEntrada
@@ -27,15 +29,29 @@ public class UnicaEntrada extends HttpServlet {
 
 		ListaJugadores ListarJugadores = new ListaJugadores();
 		
-		ListarJugadores.listar(request, response);
+		ListarJugadores.ejecutar(request, response);
+		
+		} else if (accion.equals("mostrarJugadores")) {
+
+			 MostrarJugadores mostrarJugadores  = new MostrarJugadores();
+			 
+			mostrarJugadores.ejecutar(request, response);
 		
 		} else if (accion.equals("eliminarJugadores")) {
 
-			EliminarJugadores.eliminar(request, response);
+			EliminarJugadores.ejecutar(request, response);
 			
 		} else if (accion.equals("modificarJugadores")) {
+			
 			ModificarJugadores modificarJugadores = new ModificarJugadores();
-			modificarJugadores.modificar(request, response);
+			modificarJugadores.ejecutar(request, response);
+		}
+		
+		else if(accion.equals("nuevoJugador")) {
+			NuevoJugador nuevojugador = new NuevoJugador();
+			nuevojugador.ejecutar(request, response);
+			
+			
 		}
 
 	}
