@@ -25,7 +25,7 @@ public class ModificarJugadores {
 
 		Integer id = Integer.valueOf(paramId);
 		
-		System.out.println("Modificando Jugador pir" + id);
+		System.out.println("Modificando Jugador" + id);
 
 		Date parametroFecha = null;
 
