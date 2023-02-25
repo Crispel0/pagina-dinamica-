@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<c:url value="/modificarJugadores" var= "modificarJugadores"/>
+<c:url value="/entrada" var= "modificarJugadores"/>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -19,7 +19,7 @@ FechaAdmision
 value="${jugador.fechaAdmision}" pattern="dd/MM/yyyy" />"/> 
 
 <input type="hidden" name="id" value="${jugador.id}" /> 
-
+<input type="hidden" name="accion" value="modificarJugadores"/> 
 <input type="submit"/>
 
 </form>

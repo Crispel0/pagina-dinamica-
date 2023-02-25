@@ -50,8 +50,7 @@ public class UnicaEntrada extends HttpServlet {
 		else if(accion.equals("nuevoJugador")) {
 			NuevoJugador nuevojugador = new NuevoJugador();
 			nuevojugador.ejecutar(request, response);
-			
-			
+	
 		}
 
 	}
