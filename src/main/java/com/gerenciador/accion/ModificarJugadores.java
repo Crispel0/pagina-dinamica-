@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class ModificarJugadores {
 
-	public void ejecutar(HttpServletRequest request, HttpServletResponse response)
+	public String ejecutar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String nombreJugador = request.getParameter("nombre");
@@ -42,7 +42,7 @@ public class ModificarJugadores {
 		jugador.setNombre(nombreJugador);
 		jugador.setfechaAdmision(parametroFecha);
 
-		response.sendRedirect("entrada?accion=ListaJugadores");
+		return "redirect:entrada?accion=listaJugadores";
 
 	}
 
