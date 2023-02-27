@@ -11,17 +11,16 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class ListaJugadores {
+public class ListaJugadores implements Accion{
 
-	public void ejecutar( HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
+	public String ejecutar( HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
 
 		DB basedatos = DB.getInstancia();
 
 		List<Jugador> listaJugadores = basedatos.getListaJugadores();
 
 		request.setAttribute("jugadores", listaJugadores);
-		RequestDispatcher rd = request.getRequestDispatcher("/listaJugadores.jsp");
-		rd.forward(request, response);
+		return "/listaJugadores.jsp";
 
 	}
 }

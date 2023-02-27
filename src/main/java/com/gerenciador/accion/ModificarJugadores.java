@@ -9,13 +9,12 @@ import com.gerenciador.modulo.DB;
 import com.gerenciador.modulo.Jugador;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class ModificarJugadores {
+public class ModificarJugadores implements Accion {
 
-	public void ejecutar(HttpServletRequest request, HttpServletResponse response)
+	public String ejecutar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String nombreJugador = request.getParameter("nombre");
@@ -42,7 +41,7 @@ public class ModificarJugadores {
 		jugador.setNombre(nombreJugador);
 		jugador.setfechaAdmision(parametroFecha);
 
-		response.sendRedirect("entrada?accion=ListaJugadores");
+		return "redirect:entrada?accion=ListaJugadores";
 
 	}
 
