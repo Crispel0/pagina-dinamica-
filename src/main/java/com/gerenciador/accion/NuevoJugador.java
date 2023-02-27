@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class NuevoJugador {
 	
-	public String ejecutar (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	public void ejecutar (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		 
 		String nombreJugador = request.getParameter("nombre");
 		String paramFechaAdmision = request.getParameter("fecha");
@@ -45,7 +45,7 @@ public class NuevoJugador {
 		
 		
 		request.setAttribute("jugadores", jugadores.getNombre());
-		return "redirect:entrada?accion=listaJugadores";
+		response.sendRedirect("entrada?accion=listaJugadores");
 
 }
 }

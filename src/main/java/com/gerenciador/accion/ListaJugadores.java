@@ -13,16 +13,15 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class ListaJugadores {
 
-	public String ejecutar( HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
+	public void ejecutar( HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
 
 		DB basedatos = DB.getInstancia();
 
 		List<Jugador> listaJugadores = basedatos.getListaJugadores();
 
 		request.setAttribute("jugadores", listaJugadores);
-		
-		return "forward:listaJugadores.jsp";
-		
+		RequestDispatcher rd = request.getRequestDispatcher("/listaJugadores.jsp");
+		rd.forward(request, response);
 
 	}
 }
