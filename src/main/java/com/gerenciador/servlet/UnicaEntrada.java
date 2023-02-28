@@ -1,6 +1,7 @@
 package com.gerenciador.servlet;
 
 import jakarta.servlet.RequestDispatcher;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -46,7 +47,9 @@ public class UnicaEntrada extends HttpServlet {
 			throw new ServletException(e);
 		}
 		
-		
+		/*guarda la redireccion en dos partes el forward y la ruta dependiendo si es forward o redirect se ejecuta
+		 * el if o el else
+		 */
 		String[] direccionyTipo = parametroAccion.split(":");
 				
 		if(direccionyTipo[0].equals("forward")) {
