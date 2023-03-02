@@ -29,7 +29,7 @@ public class UnicaEntrada extends HttpServlet {
 		 * compone de ello las clases
 		 */
 		
-		String modeloClase = "com.gerenciador.accion" + parametroAccion;
+		String modeloClase = "com.gerenciador.accion." + parametroAccion;
 		String nombre;
 		try {
 			/*
