@@ -25,8 +25,8 @@
 			<fmt:formatDate value="${jugador.fechaAdmision}" pattern="dd/MM/yyyy" />
 			</li>
 			<!-- Es asignado por la ruta  del URL la especificacion del id -->
-			<a href="/gerenciador/entrada?accion=eliminarJugadores&id=${jugador.id}">Eliminar</a>
-			<a href="/gerenciador/entrada?accion=mostrarJugadores&id=${jugador.id}">modificar</a>
+			<a href="/gerenciador/entrada?accion=EliminarJugadores&id=${jugador.id}">Eliminar</a>
+			<a href="/gerenciador/entrada?accion=MostrarJugadores&id=${jugador.id}">modificar</a>
 		</c:forEach>
 	</ul>
 </body>

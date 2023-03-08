@@ -19,7 +19,7 @@ FechaAdmision
 value="${jugador.fechaAdmision}" pattern="dd/MM/yyyy" />"/> 
 
 <input type="hidden" name="id" value="${jugador.id}" /> 
-<input type="hidden" name="accion" value="modificarJugadores"/> 
+<input type="hidden" name="accion" value="ModificarJugadores"/> 
 <input type="submit"/>
 
 </form>

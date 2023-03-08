@@ -13,7 +13,7 @@
 
 Jugador <input type="text" name="nombre" placeholder="Ingrese El Nombre De Un Jugador"/> 
 FechaAdmision <input type="text" name="fecha" placeholder="Ingrese la fecha de admision del jugador">
-<input type="hidden" name="accion" value="nuevoJugador">
+<input type="hidden" name="accion" value="NuevoJugador">
 <input type="submit"/>
 
 </form>
