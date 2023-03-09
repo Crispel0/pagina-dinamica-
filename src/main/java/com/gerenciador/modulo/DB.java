@@ -5,10 +5,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import com.gerenciador.accion.IdentificacionJugadores;
+
 public class DB {
 
 	private final List<Jugador> listaJugadores = new ArrayList<>();
 	private final AtomicInteger llavesecuencial = new AtomicInteger(1);
+	List<IdentificacionJugadores> listaIdJugadores = new ArrayList<>();
 	private static DB instance = null;
 	
 	/*can't instanciate it*/
@@ -18,10 +21,24 @@ public class DB {
 		Jugador jugador = new Jugador();
 		jugador.setId(llavesecuencial.getAndIncrement());
 		jugador.setNombre("Ronaldinho");
+		
 		Jugador jugador2 = new Jugador();
+		
 		jugador2.setId(llavesecuencial.getAndIncrement());
 		jugador2.setNombre("Di Maria");
 		
+		IdentificacionJugadores jugadores = new IdentificacionJugadores();
+		IdentificacionJugadores jugadores2 = new IdentificacionJugadores();
+		
+		jugadores.setNombre("Crispelo");
+		jugadores.setContrasena("Cristian901");
+		
+		//add the id of each player instancied where we're pass the name and password//
+		
+		listaIdJugadores.add(jugadores);
+		listaIdJugadores.add(jugadores2);
+		
+		//add the players in the ArrayList of players//
 		listaJugadores.add(jugador);
 		listaJugadores.add(jugador2);
 		
