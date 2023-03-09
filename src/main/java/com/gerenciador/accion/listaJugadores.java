@@ -19,7 +19,7 @@ public class listaJugadores implements Accion{
 		List<Jugador> listaJugadores = basedatos.getListaJugadores();
 
 		request.setAttribute("jugadores", listaJugadores);
-		return "forward:listaJugadores.jsp";
+		return "/listaJugadores.jsp";
 
 	}
 }

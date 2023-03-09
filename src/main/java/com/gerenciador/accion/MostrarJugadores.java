@@ -27,7 +27,7 @@ public String ejecutar(HttpServletRequest request, HttpServletResponse response)
 	
 	request.setAttribute("jugador", jugador);
 	
-	return "forward:ModificarJugadoresForm.jsp";
+	return "forward:/ModificarJugadoresForm.jsp";
 	
 }
 }

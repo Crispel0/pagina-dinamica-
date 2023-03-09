@@ -8,10 +8,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import com.gerenciador.accion.Accion;
 
@@ -26,11 +22,7 @@ public class UnicaEntrada extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
 		String parametroAccion = request.getParameter("accion");
-		System.out.println(parametroAccion);
-
-		
 		
 		/*
 		 * Creo una claseModelo donde paso la ruta de ella mas su paquete ya que se
@@ -58,13 +50,13 @@ public class UnicaEntrada extends HttpServlet {
 		/*guarda la redireccion en dos partes el forward y la ruta dependiendo si es forward o redirect se ejecuta
 		 * el if o el else
 		 */
-		
-		String[] direccionyTipo = nombre.split(":");
-		
+		String[] direccionyTipo = parametroAccion.split(":");
+				
 		if(direccionyTipo[0].equals("forward")) {
 			RequestDispatcher rd = request.getRequestDispatcher(direccionyTipo[1]);
 			rd.forward(request, response);
 		}else {
+			
 		response.sendRedirect(direccionyTipo[1]);
 	}
 }

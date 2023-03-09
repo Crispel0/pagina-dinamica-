@@ -41,7 +41,7 @@ public class ModificarJugadores implements Accion {
 		jugador.setNombre(nombreJugador);
 		jugador.setfechaAdmision(parametroFecha);
 
-		return "redirect:entrada?accion=listaJugadores";
+		return "redirect:entrada?accion=ListaJugadores";
 
 	}
 
