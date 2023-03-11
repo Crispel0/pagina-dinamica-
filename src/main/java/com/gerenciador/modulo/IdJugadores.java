@@ -19,13 +19,12 @@ public class IdJugadores {
 	}
 	
 	public boolean esigual (String nombre, String contrasena) {
-		if(! this.nombre.equals(nombre)){
-		return false;}
-		
-		if(! this.contrasena.equals(contrasena)){
+		if(!this.nombre.equals(nombre)){
 		return false;
 		}
-		
+		if(!this.contrasena.equals(contrasena)){
+		return false;
+		}
 		return true;
 	}
 	
