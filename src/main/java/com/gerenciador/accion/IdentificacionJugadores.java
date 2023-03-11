@@ -21,9 +21,13 @@ public class IdentificacionJugadores {
 	
 	//if the name is equal to the password so is true of contrary is false//
 	public boolean esigual(String nombre, String contrasena) {
-		if(! nombre.equals(contrasena)){
+		if(!this.nombre.equals(contrasena)){
 			return false;
-		}else 
+		}
+		if(!this.contrasena.equals(contrasena)) {
+			return false;
+		}
+		else 
 			return true;
 	}
 	
